@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+body{
+    background-image: url(../img/halowallpaper.jpg);
+    background-size: cover;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    
+}
+
+.main-container{
+    width: 45%;
+    border: 4px solid #1512bb4f;
+    border-radius: 10px;
+    margin: 6rem;
+    background-color: #000000;
+}
+
+section{
+    text-align: center;
+}
+
+nav{
+    text-align: center;
+}
+article{
+    width: 40%;
+    display: inline-block;
+}
+aside{
+    width: 20%;
+    display: inline-block;
+    background-color: #2c294b54;
+    border: 2px solid #1000f7;
+    margin: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+footer{
+    text-align: right;
+}
