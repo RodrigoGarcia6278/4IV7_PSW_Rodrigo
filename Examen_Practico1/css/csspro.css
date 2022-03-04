@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+body{
+    background-image: url(../../img/fondoexam.jpg);
+    background-size: cover;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: column;;
+}
+
+.main-container{
+    background-image: url(../../img/fondoexam2.png);
+    width: 850px;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border: 4px solid rgb(17, 0, 253);
+    margin: 2rem;
+    border-radius: 50px;
+}
+
+form, label, h3{
+    color: white;
+}
+
+form, input{
+    color: black;
+}
+
+footer{
+    color: black;
+    padding-top: 2%;
+
+}
