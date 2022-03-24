@@ -49,3 +49,9 @@ function problema3(){
     document.querySelector('#p3-output').textContent = p3_res;
 
 }
+
+//problema 1
+
+function problema1(){
+    
+}

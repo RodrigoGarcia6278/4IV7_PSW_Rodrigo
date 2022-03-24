@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EjerciciosJS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h2>Problemas Secuenciales</h2>
+    </header>
+    <div class="container">
+        <div class="p">
+            <h3 class="p-title">Problema 1</h3>
+            <h3 class="p-description">Suponga que un individuo desea invertir su capital en un banco y desea saber cuanto dinero ganara después de un mes si el banco paga a razón de 2% mensual.</h3>
+            <div class="p-content">
+                <input type="number" class="p-input" placeholder="Ingrese el capital: " id="p1-input">
+                <button type="button" class="p-button" style="margin-top: 1rem;" onclick="problema1()">Calcular</button>
+                <pre class="p-output" id="p1-output">Esperando datos...</pre>
+            </div>
+        </div>
+        <div class="p">
+            <h3 class="p-title">Problema 2</h3>
+            <h3 class="p-description">Un vendedor recibe un sueldo base mas un 10% extra por comisión de sus ventas, el vendedor desea saber cuanto dinero obtendrá por concepto de comisiones por las tres ventas que realiza en el mes y el total que recibirá en el mes tomando en cuenta su sueldo base y comisiones.</h3>
+            <div class="p-content">
+                <input type="number" class="p-input" placeholder="Ingrese el sueldo: " id="p2.1-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese la venta 1: " id="p2.2-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese la venta 2: " id="p2.3-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese la venta 3: " id="p2.4-input">
+                <button type="button" class="p-button" style="margin-top: 1rem;" onclick="problema2()">Calcular</button>
+                <pre class="p-output" id="p2-output">Esperando datos...</pre>
+            </div>
+        </div>
+        <div class="p">
+            <h3 class="p-title">Problema 3</h3>
+            <h3 class="p-description">Una tienda ofrece un descuento del 15% sobre el total de la compra y un cliente desea saber cuanto deberá pagar finalmente por su compra.</h3>
+            <div class="p-content">
+                <input type="number" class="p-input" placeholder="Ingrese el valor de compra: " id="p3-input">
+                <button type="button" class="p-button" style="margin-top: 1rem;" onclick="problema3()">Calcular</button>
+                <pre class="p-output" id="p3-output">Esperando datos...</pre>
+            </div>
+        </div>
+        <div class="p">
+            <h3 class="p-title">Problema 4</h3>
+            <h3 class="p-description">Un alumno desea saber cual será su calificación final en la materia de Algoritmos. Dicha calificación se compone de los siguientes porcentajes:
+                55% del promedio de sus tres calificaciones parciales.
+                30% de la calificación del examen final.
+                15% de la calificación de un trabajo final.</h3>
+            <div class="p-content">
+                <input type="number" class="p-input" placeholder="Ingrese calif. del 1er parcial: " id="p4.1-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese calif. del 2do parcial: " id="p4.2-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese calif. del 3er parcial: " id="p4.3-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese calif. del examen: " id="p4.4-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese calif. del trabajo: " id="p4.5-input">
+                <button type="button" class="p-button" style="margin-top: 1rem;" onclick="problema4()">Calcular</button>
+                <pre class="p-output" id="p4-output">Esperando datos...</pre>
+            </div>
+        </div>
+        <div class="p">
+            <h3 class="p-title">Problema 5</h3>
+            <h3 class="p-description">Un maestro desea saber que porcentaje de hombres y que porcentaje de mujeres hay en un grupo de estudiantes.</h3>
+            <div class="p-content">
+                <input type="number" class="p-input" placeholder="Ingrese no. de hombres: " id="p5.1-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese no. de mujeres: " id="p5.2-input">
+                <button type="button" class="p-button" style="margin-top: 1rem;" onclick="problema5()">Calcular</button>
+                <pre class="p-output" id="p5-output">Esperando datos...</pre>
+            </div>
+        </div>
+        <div class="p">
+            <h3 class="p-title">Problema 6</h3>
+            <h3 class="p-description">Realizar un algoritmo que calcule la edad de una persona.</h3>
+            <div class="p-content">
+                <input type="number" class="p-input" placeholder="Ingrese el dia de nacimiento: " id="p6.1-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese el mes de nacimiento: " id="p6.2-input">
+                <br>
+                <input type="number" class="p-input" placeholder="Ingrese el año de nacimiento: " id="p6.3-input">
+                <button type="button" class="p-button" style="margin-top: 1rem;" onclick="problema6()">Calcular</button>
+                <pre class="p-output" id="p6-output">Esperando datos...</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/problemas.js"></script>
+    <footer>
+        <a href="../index.html">Regresar a Principal
+        </a>
+    </footer>
+</body>
+</html>
