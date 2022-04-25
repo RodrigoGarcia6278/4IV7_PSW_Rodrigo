@@ -101,7 +101,7 @@ public class EliminarAlumno extends HttpServlet {
                 
                 out.println("<h1>Alumno Eliminado de la BD</h1>");
                 
-                System.out.println("Se elimino el registro");
+                System.out.println("Se eliminno el registro");
             
             }catch(Exception e){
                 

@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alumno
  */
-public class RegistrarAlumno extends HttpServlet {
+public class RegistroEquipo extends HttpServlet {
 
     private Connection con;
     private Statement set;
@@ -35,25 +35,22 @@ public class RegistrarAlumno extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
      public void init(ServletConfig cfg) throws ServletException{
-        //aqui es donde se define como se conecta a la BD
-        String URL = "jdbc:mysql:3306//localhost/alumnos";
-                    //tipo de conector:manejadorbd:puerto//IP/nombrebd
+        String URL = "jdbc:mysql:3306//localhost/docentes";
         String userName = "root";
         String password = "spyXfam_11";
         
         try{
-            //lo primero es conectarnos
             Class.forName("com.mysql.jdbc.Driver");
             
-            URL = "jdbc:mysql://localhost/alumnos";
+            URL = "jdbc:mysql://localhost/docentes";
             
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
             
-            System.out.println("Se conecto a la BD *w* ");
+            System.out.println("Se conecto a la BD");
         }catch(Exception e){
             
-            System.out.println("No se conecto, solo juguito contigo");
+            System.out.println("No se conecto a la BD");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
         
@@ -100,32 +97,70 @@ public class RegistrarAlumno extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Registro de un Nuevo Alumno</title>");            
+            out.println("<title>Datos de Equipo</title>");            
             out.println("</head>");
             out.println("<body>");
             
             try{
-                //vamos a registrar en la bd (insert)
-                int bol;
-                String nom, appat, apmat, tel;
+                String eti, prob, seri, desc1, tec, desc2, mou, desc3, marc, nommar, moni, desc4, estequ, desc5;
                 
-                //es obtener los parametros
-                nom = request.getParameter("nombre");
-                appat = request.getParameter("appat");
-                apmat = request.getParameter("apmat");
-                tel = request.getParameter("tel");
-                bol = Integer.parseInt(request.getParameter("boleta"));
+                eti = request.getParameter("etiqueta");
+                prob= request.getParameter("problema");
+                seri = request.getParameter("serial");
+                desc1 = request.getParameter("descripcion1");
+                tec = request.getParameter("teclado");
+                desc2 = request.getParameter("descripcion2");
+                mou = request.getParameter("mouse");
+                desc3 = request.getParameter("descripcion3");
+                marc = request.getParameter("idmarca");
+                nommar = request.getParameter("nommarca");
+                moni = request.getParameter("monitor");
+                desc4 = request.getParameter("descripcion4");
+                estequ = request.getParameter("edoequipo");
+                desc5 = request.getParameter("descripcion5");
                 
                 //querry
-                String q = "insert into alumnobatiz "
-                        + "values ("+bol+", '"+nom+"', '"+appat+"', '"+apmat+"', '"+tel+"')";
+                String q1 = "insert into Mcpu "
+                        + "values ("+seri+", '"+desc1+"')";
                 
-                //se ejecuta la sentencia
+                String q2 = "insert into Mteclado "
+                        + "values ("+tec+", '"+desc2+"')";
                 
-                set.executeUpdate(q);
+                String q3 = "insert into Mmouse "
+                        + "values ("+mou+", '"+desc3+"')";
+                
+                String q4 = "insert into Cmarca "
+                        + "values ("+marc+", '"+nommar+"')";
+                
+                String q5 = "insert into Mmonitor "
+                        + "values ("+moni+", '"+desc4+"')";
+                
+                String q6 = "insert into Cestadoequipo "
+                        + "values ("+estequ+", '"+desc5+"')";
+                
+                String q7 = "insert into Metiqueta "
+                        + "values ("+eti+")";
+                
+                String q8 = "insert into Mproblema "
+                        + "values ("+prob+")";
+                                
+                set.executeUpdate(q1);
+                
+                set.executeUpdate(q2);
+                
+                set.executeUpdate(q3);
+                
+                set.executeUpdate(q4);
+                
+                set.executeUpdate(q5);
+                
+                set.executeUpdate(q6);
+                
+                set.executeUpdate(q7);
+                
+                set.executeUpdate(q8);
                 out.println("<h1>Registro Exitoso</h1>");
-                System.out.println("Se registro un nuevo alumno");
-                
+                System.out.println("Se registro un nuevo equipo para Reporte");
                 
                 
             
@@ -139,7 +174,7 @@ public class RegistrarAlumno extends HttpServlet {
             
             
             
-            out.println("<a href='ConsultarAlumnos' >Consultar Alumnos</a>");
+            out.println("<a href='reporte.html' >Datos del Registro</a>");
             out.println("</body>");
             out.println("</html>");
         }

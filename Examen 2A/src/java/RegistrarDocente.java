@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alumno
  */
-public class RegistrarAlumno extends HttpServlet {
+public class RegistrarDocente extends HttpServlet {
 
     private Connection con;
     private Statement set;
@@ -35,25 +35,22 @@ public class RegistrarAlumno extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
      public void init(ServletConfig cfg) throws ServletException{
-        //aqui es donde se define como se conecta a la BD
-        String URL = "jdbc:mysql:3306//localhost/alumnos";
-                    //tipo de conector:manejadorbd:puerto//IP/nombrebd
+        String URL = "jdbc:mysql:3306//localhost/docentes";
         String userName = "root";
         String password = "spyXfam_11";
         
         try{
-            //lo primero es conectarnos
             Class.forName("com.mysql.jdbc.Driver");
             
-            URL = "jdbc:mysql://localhost/alumnos";
+            URL = "jdbc:mysql://localhost/docentes";
             
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
             
-            System.out.println("Se conecto a la BD *w* ");
+            System.out.println("Se conecto a la BD");
         }catch(Exception e){
             
-            System.out.println("No se conecto, solo juguito contigo");
+            System.out.println("No se conecto a la BD");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
         
@@ -100,31 +97,26 @@ public class RegistrarAlumno extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Registro de un Nuevo Alumno</title>");            
+            out.println("<title>Datos de Docente</title>");            
             out.println("</head>");
             out.println("<body>");
             
             try{
-                //vamos a registrar en la bd (insert)
-                int bol;
-                String nom, appat, apmat, tel;
+                String nom, appat, apmat, fecha, noemp;
                 
-                //es obtener los parametros
                 nom = request.getParameter("nombre");
                 appat = request.getParameter("appat");
                 apmat = request.getParameter("apmat");
-                tel = request.getParameter("tel");
-                bol = Integer.parseInt(request.getParameter("boleta"));
+                fecha = request.getParameter("fechanac");
+                noemp = request.getParameter("noempleado");
                 
                 //querry
-                String q = "insert into alumnobatiz "
-                        + "values ("+bol+", '"+nom+"', '"+appat+"', '"+apmat+"', '"+tel+"')";
-                
-                //se ejecuta la sentencia
-                
+                String q = "insert into docentebatiz "
+                        + "values ("+noemp+", '"+nom+"', '"+appat+"', '"+apmat+"', '"+fecha+"')";
+                                
                 set.executeUpdate(q);
                 out.println("<h1>Registro Exitoso</h1>");
-                System.out.println("Se registro un nuevo alumno");
+                System.out.println("Se registro un nuevo docente para Reporte");
                 
                 
                 
@@ -139,7 +131,7 @@ public class RegistrarAlumno extends HttpServlet {
             
             
             
-            out.println("<a href='ConsultarAlumnos' >Consultar Alumnos</a>");
+            out.println("<a href='equipo.html' >Datos del equipo</a>");
             out.println("</body>");
             out.println("</html>");
         }
